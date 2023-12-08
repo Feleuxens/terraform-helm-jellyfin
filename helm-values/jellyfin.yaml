@@ -1,0 +1,31 @@
+replicaCount: 1
+
+resources:
+  request:
+    cpu: ${cpu_request}
+    memory: ${memory_request}
+  limit:
+    memory: ${memory_limit}
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod-dns01
+  hosts:
+    - host: jellyfin.${domain}
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - secretName: jellyfin-tls
+      hosts:
+        - jellyfin.${domain}
+
+persistence:
+  config:
+    enabled: true
+    size: 1Gi
+  media:
+    enabled: true
+    size: 100Gi
