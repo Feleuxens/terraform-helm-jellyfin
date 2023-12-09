@@ -1,10 +1,10 @@
 replicaCount: 1
 
 resources:
-  request:
+  requests:
     cpu: ${cpu_request}
     memory: ${memory_request}
-  limit:
+  limits:
     memory: ${memory_limit}
 
 ingress:
