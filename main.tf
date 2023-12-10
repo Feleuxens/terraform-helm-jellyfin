@@ -13,6 +13,7 @@ resource "helm_release" "jellyfin" {
       cpu_request : var.cpu_request,
       memory_request : var.memory_request,
       memory_limit : var.memory_limit
+      media_size : var.media_size
     })
   ]
 }
