@@ -28,4 +28,4 @@ persistence:
     size: 1Gi
   media:
     enabled: true
-    size: 100Gi
+    size: ${media_size}

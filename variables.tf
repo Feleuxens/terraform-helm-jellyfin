@@ -16,3 +16,9 @@ variable "memory_limit" {
   type    = string
   default = "512Mi"
 }
+
+variable "media_size" {
+  type        = string
+  default     = "100Gi"
+  description = "Size of the media PVC"
+}
