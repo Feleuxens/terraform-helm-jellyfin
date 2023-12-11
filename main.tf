@@ -3,7 +3,7 @@ resource "helm_release" "jellyfin" {
 
   repository       = "https://helm.feleuxens.de"
   chart            = "jellyfin"
-  version          = "0.2.1"
+  version          = "0.2.2"
   create_namespace = true
   namespace        = "jellyfin"
 
